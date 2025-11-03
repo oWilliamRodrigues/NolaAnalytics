@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Application.DTOs.ChurnCustomerDto>
+
+<div class="table-responsive">
+    <table class="table table-striped align-middle" id="churnTable">
+        <thead class="table-light">
+            <tr>
+                <th>Cliente</th>
+                <th>Pedidos</th>
+                <th>Última compra</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var c in Model)
+            {
+                <tr>
+                    <td>@c.CustomerName</td>
+                    <td>@c.TotalOrders</td>
+                    <td>@c.LastOrder.ToString("yyyy-MM-dd")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<!-- Paginação -->
+<div id="churnPagination" class="d-flex justify-content-center mt-2"></div>

@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Application.DTOs.DeliveryRegionDto>
+
+<h5>Delivery por Região</h5>
+<table class="table">
+    <thead><tr><th>Bairro</th><th>Cidade</th><th>Entregas</th><th>Avg (min)</th><th>P90 (min)</th></tr></thead>
+    <tbody>
+        @foreach (var r in Model)
+        {
+            <tr>
+                <td>@r.Neighborhood</td>
+                <td>@r.City</td>
+                <td>@r.Deliveries</td>
+                <td>@Math.Round(r.AvgDeliveryMinutes, 1)</td>
+                <td>@Math.Round(r.P90Minutes, 1)</td>
+            </tr>
+        }
+    </tbody>
+</table>

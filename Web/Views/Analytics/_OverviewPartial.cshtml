@@ -1,0 +1,19 @@
+﻿@model Application.DTOs.OverviewDto
+
+<div class="card p-3">
+    <h5>Overview</h5>
+    <div class="row">
+        <div class="col">
+            <strong>Faturamento:</strong> @Model.TotalRevenue.ToString("C")
+        </div>
+        <div class="col">
+            <strong>Pedidos:</strong> @Model.Orders
+        </div>
+        <div class="col">
+            <strong>Ticket Médio:</strong> @Model.AvgTicket.ToString("C")
+        </div>
+        <div class="col">
+            <strong>Entrega média (min):</strong> @(Model.AvgDeliverySeconds / 60)
+        </div>
+    </div>
+</div>

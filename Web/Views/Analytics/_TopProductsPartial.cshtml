@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Application.DTOs.TopProductDto>
+
+<h5>Top Produtos</h5>
+<table class="table">
+    <thead><tr><th>Produto</th><th>Unidades</th><th>Receita</th></tr></thead>
+    <tbody>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>@p.ProductName</td>
+                <td>@p.UnitsSold</td>
+                <td>@p.Revenue.ToString("C")</td>
+            </tr>
+        }
+    </tbody>
+</table>
